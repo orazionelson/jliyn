@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    	<meta charset="utf-8">
+    	<title>Jliyn - Just load if you need</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="Jliyn - Just load If you need">
+    	<meta name="author" content="Alfredo Cosco - alfredo@nelsonweb.it">
+
+    	<!-- styles -->
+    	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">   
+
+
+    	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    	<!--[if lt IE 9]>
+      	<script src="../assets/js/html5shiv.js"></script>
+    	<![endif]-->
+  
+		<script>
+		   var startTime = (new Date()).getTime();
+		</script>
+				<style>
+		.header {
+font-family: 'Arial Narrow', Arial, sans-serif;
+line-height: 24px;
+font-size: 11px;
+background: #000;
+opacity: 0.9;
+text-transform: uppercase;
+z-index: 9999;
+position: relative;
+width: 100%;
+-moz-box-shadow: 1px 0px 2px #000;
+-webkit-box-shadow: 1px 0px 2px #000;
+box-shadow: 1px 0px 2px #000;
+}
+		</style>
+  </head>
+
+  <body>
+<div class="header">
+	<a href="http://nelsondev.blogspot.com/2013/10/jliyn-just-load-if-you-need-jquery.html"><strong>&laquo; </strong>Go to nelsonDev</a> --- <a href="http://www.nelsonweb.it"><strong>&laquo; </strong>Go to nelsonweb.it</a> 
+	<div class="clr"></div>
+</div><!-- header -->
+
+<h1 class="exec">Execution time: </h1>
+<div class="container">
+	<div class="hero-unit">
+	 <h1>Jliyn - Just load if you need</h1>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="row-fluid">
+	    <div class="span12">
+           <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#lorem" class="lorem" data-toggle="tab">Lorem</a></li>
+              <li><a href="#pics" class="pics" data-toggle="tab">Pics</a></li>
+              <li><a href="#videos" class="videos" data-toggle="tab">Videos</a></li>
+  
+            </ul>
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="lorem">
+
+              </div>
+              <div class="tab-pane fade" id="pics">
+
+              </div>
+              <div class="tab-pane fade" id="videos">
+              </div>
+            </div>
+
+
+	    </div>
+	    
+	  </div>
+	</div>
+
+
+
+
+
+      <!-- FOOTER -->
+
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+    $('#myTab a').click(function (e) {
+    e.preventDefault();
+    //$(this).tab('show');
+	var key=$(this).attr('class');
+	$('#'+key).load(key+'.html');
+    });  
+    $('div > .active').load($('div > .active').attr('id')+'.html');
+    </script>
+  <script>
+   $(window).load(function () {
+       var endTime = (new Date()).getTime();
+       var millisecondsLoading = endTime - startTime;
+       $('.exec').append(millisecondsLoading);
+       // Put millisecondsLoading in a hidden form field
+       // or Ajax it back to the server or whatever.
+   });
+</script>
+      <footer>
+		<h1 class="exec">Execution time: </h1>
+      </footer>
+</body></html>
